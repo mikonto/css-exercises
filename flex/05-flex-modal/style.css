@@ -20,6 +20,7 @@ body {
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  
 }
 
 .icon {
@@ -51,6 +52,7 @@ body {
 button {
   padding: 8px 16px;
   border-radius: 8px;
+
 }
 
 button.continue {
@@ -64,3 +66,58 @@ button.cancel {
   border: 1px solid #ddd;
   color: royalblue;
 }
+
+/* Own */
+
+.modal {
+  padding: 10px;
+  display: flex; /* sets .container-icon and .container-rest in horizontal order */
+}
+
+.container-icon {
+  margin: 10px;
+}
+
+.container-rest{
+  margin: 10px;
+  display: flex;
+  flex-direction: column; /* sets .header-close-button, .text and .button in vertical order */
+}
+
+.header-close-button { /* sets .header and .close-button in horizontal order */
+  display: flex;
+  align-items: baseline;
+  }
+
+.header {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.text {
+margin: 10px 10px 10px 0;
+}
+
+.close-button {
+  margin-left: auto; /* aligns .close-button into right end */
+}
+
+/* Comments
+Quite different from the solution. 
+
+Own version had more containers:
+- .container-icon -> containing icon
+- .container-rest -> containing everything else
+- .header-close-button -> containing header & close-button
+
+Own version used more margins in different containers and was generally more complex
+
+Solution made the following: 
+- Added container around everything except icon
+- Put .close-button inside .header
+- Set justify-content: space-between for header -> this pushed .close-button on the right end, while keeping the header text in the left end
+- Made .modal a flexbox, adding paddings and gap -> this put icon and container side by side with a gap between and padding around
+- Added flex-shrink: 0 for .icon -> this prevented .container to squeeze it
+- Added margin-bottom for .header and .text
+
+*/
