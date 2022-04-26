@@ -24,3 +24,33 @@ img {
   justify-content: center;
   background: #eee;
 }
+
+/* Own additions */
+
+.title {
+  text-align: center; /* center the title */
+  margin-bottom: 32px; /* space between the title and items */
+}
+
+.container {
+  display: flex; /* Make the container a flex item*/
+  justify-content: center; /* Center the items*/
+  gap: 52px; /* Gap between the items*/
+  }
+
+  .container > * { /* All the sub items on .container (all the plant items)*/
+    text-align: center; /* Center the photos and texts*/
+    width: 200px; /* Width of the items*/
+    /* flex-wrap: wrap; /* Wrap the items*/ 
+  } 
+
+  /* Comments 
+  Pretty similar to solution. 
+  
+  Differences:
+  - Solution has text-align: center in body, not in .title -> if in body, all text will be centered, instead of just the title
+  - Solution has class "info" for individual plant items. I used divs and .container > *
+  - Solution has max-width: 200px, instead of width: 200px
+  - Mistake: Added flex-wrap into .container (to try to wrap text), but it does not work 
+      -> .container should be display=flex to flex-wrap to have effect, and then it would wrap image & text
+  */
