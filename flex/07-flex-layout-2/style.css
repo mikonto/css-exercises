@@ -26,3 +26,84 @@ body {
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
 }
+
+/* OWN */
+
+/* Header, middle-part and footer in vertical order */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/*  */
+.header {
+  font-size: 32px;
+  font-weight: 900;
+  /* Align text with flex */
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+
+/* Container for sidebad & cards*/
+.body {
+  display: flex;
+  /* Expand the container to fill the vertical space, so it "pushes" the header up and the footer down */
+  flex: 1;
+}
+
+.sidebar {
+/* Prevent shrinking of the sidebar */
+  flex-shrink: 0;
+  padding: 16px;
+}
+
+/* Remove bullets and list indent*/
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Add gaps between links */
+.sidebar ul li {
+  padding-bottom: 16px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+}
+
+/* Wrap cards and align to start */
+.container {
+  display: flex;
+  padding: 32px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+/* Size of the cards*/
+.card {
+  width: 300px;
+  height: 270px;
+  margin: 16px;
+  padding: 16px;
+}
+
+/* Center the text and the icon */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* COMMENTS
+
+Very similar to the solution. 
+
+I used height, width & align-content: flex-start for cards. Solution only used width without height and flex-start. 
+So the cards in the solution were slightly more strecthed vertically.
+
+*/
