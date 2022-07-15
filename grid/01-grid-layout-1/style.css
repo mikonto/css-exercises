@@ -45,3 +45,38 @@ body, html {
 .footer {
   background-color: #393f4d;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 400px 1200px;
+  grid-template-rows: 100px 100px 500px 100px;
+  grid-template-areas: 
+    "header header"
+    "sidebar nav"
+    "sidebar article"
+    "footer footer";
+  gap: 15px;
+  justify-content: center;
+
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.article {
+  grid-area: article;
+}
+
+.footer {
+  grid-area: footer;
+}
+
